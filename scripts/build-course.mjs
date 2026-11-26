@@ -11,13 +11,13 @@ mkdirSync(outDir, { recursive: true });
 const manifest = {
   course: 'webmcp-zero-expert',
   tracks: [
-    { n: '4', title: 'WebMCP Expert', modules: modules.map(m => ({ id: m.id, title: m.title, topics: 6, href: `https://inematds.github.io/webmcp-5-expert/curso/expert/modulo-${m.id}.html` })) }
+    { n: '4', title: 'WebMCP Expert', modules: modules.map(m => ({ id: m.id, title: m.title, topics: 6, href: `https://linnoff88-dev.github.io/arckhe-/curso/expert/modulo-${m.id}.html` })) }
   ]
 };
 
 const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const relFor = depth => typeof depth === 'string' ? depth : (depth === 0 ? '.' : '../..');
-const manifestBlock = () => `<script type="application/json" data-inema-manifest>\n${JSON.stringify(manifest, null, 2)}\n</script>`;
+const manifestBlock = () => `<script type="application/json" data-ARCKHÉ-manifest>\n${JSON.stringify(manifest, null, 2)}\n</script>`;
 
 function head({ title, description, depth = 0 }) {
   const rel = relFor(depth);
@@ -27,9 +27,9 @@ function head({ title, description, depth = 0 }) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="${description}">
-  <meta name="inema-course" content="webmcp-zero-expert">
+  <meta name="ARCKHÉ-course" content="webmcp-zero-expert">
   <script>
-    (function(){try{var h=document.documentElement,p=JSON.parse(localStorage.getItem('inema.prefs')||'{}'),t=p.theme||(localStorage.getItem('theme')==='light'?'claro':'inema-dark');if(t==='claro'||t==='sepia')h.classList.remove('dark');else h.classList.add('dark');if(['sepia','foco','contraste'].includes(t))h.setAttribute('data-theme',t);else h.removeAttribute('data-theme');if(p.fontScale)h.style.fontSize=p.fontScale+'%';}catch(e){document.documentElement.classList.add('dark')}})();
+    (function(){try{var h=document.documentElement,p=JSON.parse(localStorage.getItem('ARCKHÉ.prefs')||'{}'),t=p.theme||(localStorage.getItem('theme')==='light'?'claro':'ARCKHÉ-dark');if(t==='claro'||t==='sepia')h.classList.remove('dark');else h.classList.add('dark');if(['sepia','foco','contraste'].includes(t))h.setAttribute('data-theme',t);else h.removeAttribute('data-theme');if(p.fontScale)h.style.fontSize=p.fontScale+'%';}catch(e){document.documentElement.classList.add('dark')}})();
   </script>
   <title>${title} | WebMCP Expert</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -55,21 +55,21 @@ function nav(depth = 0) {
           <span class="text-2xl" aria-hidden="true">⬡</span><span class="font-bold hidden sm:inline">WebMCP Expert</span><span class="font-bold sm:hidden">W5</span>
         </a>
         <span class="text-neutral-600 hidden sm:inline">|</span>
-        <a href="https://inema.club" target="_blank" rel="noreferrer" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        <a href="https://ARCKHÉ AI" target="_blank" rel="noreferrer" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">ARCKHÉ AI</a>
       </div>
       <div class="flex items-center gap-1">
         <div class="hidden lg:flex items-center gap-1">
           ${chapters.map((chapter, index) => `<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm ${index === 0 ? 'font-semibold' : 'text-neutral-400 hover:text-amber-400'}" ${index === 0 ? 'aria-current="page"' : ''} href="${rel}/index.html#${chapter.id}">Cap. ${chapter.number}<span class="hidden xl:inline"> · ${chapter.title.split(' ')[0]}</span></a>`).join('\n          ')}
           <a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-sky-400 hover:text-sky-300" href="${rel}/labs/validador-tools.html">Laboratórios</a>
         </div>
-        <button type="button" data-inema-journey-open class="p-2 rounded-lg text-neutral-300 hover:bg-dark-700" aria-label="Abrir minha jornada"><span aria-hidden="true">◷</span><span data-inema-journey-badge class="inema-journey-badge" data-count="0"></span></button>
+        <button type="button" data-ARCKHÉ-journey-open class="p-2 rounded-lg text-neutral-300 hover:bg-dark-700" aria-label="Abrir minha jornada"><span aria-hidden="true">◷</span><span data-ARCKHÉ-journey-badge class="ARCKHÉ-journey-badge" data-count="0"></span></button>
         <div class="relative">
-          <button type="button" data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600" aria-label="Ajustar aparência">◑</button>
-          <div data-inema-appearance class="inema-appearance-pop right-0 mt-3">
+          <button type="button" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600" aria-label="Ajustar aparência">◑</button>
+          <div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop right-0 mt-3">
             <p class="text-sm font-semibold mb-2">Tema</p>
-            <div class="inema-segment"><button data-inema-set-theme="inema-dark">Escuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sépia</button><button data-inema-set-theme="foco">Foco</button><button data-inema-set-theme="contraste">Contraste</button></div>
+            <div class="ARCKHÉ-segment"><button data-ARCKHÉ-set-theme="ARCKHÉ-dark">Escuro</button><button data-ARCKHÉ-set-theme="claro">Claro</button><button data-ARCKHÉ-set-theme="sepia">Sépia</button><button data-ARCKHÉ-set-theme="foco">Foco</button><button data-ARCKHÉ-set-theme="contraste">Contraste</button></div>
             <p class="text-sm font-semibold mt-4 mb-2">Tamanho</p>
-            <div class="inema-segment"><button data-inema-set-fontscale="100">A</button><button data-inema-set-fontscale="112">A+</button><button data-inema-set-fontscale="125">A++</button></div>
+            <div class="ARCKHÉ-segment"><button data-ARCKHÉ-set-fontscale="100">A</button><button data-ARCKHÉ-set-fontscale="112">A+</button><button data-ARCKHÉ-set-fontscale="125">A++</button></div>
           </div>
         </div>
         <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600" aria-label="Alternar tema claro e escuro">
@@ -107,14 +107,14 @@ function heroSvg(labels, prefix) {
 function scripts(depth = 0) {
   const rel = relFor(depth);
   return `<script>
-function toggleTopic(button){const item=button.closest('.topic-item');const panel=item.querySelector('.topic-explanation');const card=button.closest('[data-inema-module]');card.querySelectorAll('.topic-explanation.active').forEach(x=>{if(x!==panel){x.classList.remove('active');const b=x.previousElementSibling;if(b)b.setAttribute('aria-expanded','false')}});panel.classList.toggle('active');button.setAttribute('aria-expanded',panel.classList.contains('active')?'true':'false')}
+function toggleTopic(button){const item=button.closest('.topic-item');const panel=item.querySelector('.topic-explanation');const card=button.closest('[data-ARCKHÉ-module]');card.querySelectorAll('.topic-explanation.active').forEach(x=>{if(x!==panel){x.classList.remove('active');const b=x.previousElementSibling;if(b)b.setAttribute('aria-expanded','false')}});panel.classList.toggle('active');button.setAttribute('aria-expanded',panel.classList.contains('active')?'true':'false')}
 function openModal(id){const m=document.getElementById(id);if(m){m.classList.remove('hidden');document.body.style.overflow='hidden';m.querySelector('button')?.focus()}}
 function closeModal(){document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden'));document.body.style.overflow='auto'}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-const tt=document.getElementById('theme-toggle'),di=document.getElementById('theme-toggle-dark-icon'),li=document.getElementById('theme-toggle-light-icon');function syncTheme(){if(document.documentElement.classList.contains('dark')){li?.classList.remove('hidden');di?.classList.add('hidden')}else{di?.classList.remove('hidden');li?.classList.add('hidden')}}syncTheme();tt?.addEventListener('click',()=>{const next=document.documentElement.classList.contains('dark')?'claro':'inema-dark';if(window.INEMA&&typeof window.INEMA.setPref==='function')window.INEMA.setPref('theme',next);else{document.documentElement.classList.toggle('dark');localStorage.setItem('theme',next==='claro'?'light':'dark')}syncTheme()});
+const tt=document.getElementById('theme-toggle'),di=document.getElementById('theme-toggle-dark-icon'),li=document.getElementById('theme-toggle-light-icon');function syncTheme(){if(document.documentElement.classList.contains('dark')){li?.classList.remove('hidden');di?.classList.add('hidden')}else{di?.classList.remove('hidden');li?.classList.add('hidden')}}syncTheme();tt?.addEventListener('click',()=>{const next=document.documentElement.classList.contains('dark')?'claro':'ARCKHÉ-dark';if(window.ARCKHÉ&&typeof window.ARCKHÉ.setPref==='function')window.ARCKHÉ.setPref('theme',next);else{document.documentElement.classList.toggle('dark');localStorage.setItem('theme',next==='claro'?'light':'dark')}syncTheme()});
 </script>
 <script src="${rel}/assets/learn.js"></script>
-<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>`;
+<script>if(window.ARCKHÉ&&typeof window.ARCKHÉ.init==='function')window.ARCKHÉ.init();</script>`;
 }
 
 function accordion(module, topic, i) {
@@ -140,11 +140,11 @@ function indexPage() {
   <div class="flex items-center justify-between mb-2"><span class="text-amber-400 font-bold text-sm">${m.number}</span><span class="text-xs text-neutral-500">${m.duration}</span></div>
   <h3 class="font-semibold mb-1 group-hover:text-amber-400">${m.icon} ${m.title}</h3><p class="text-xs text-neutral-400">${m.promise}</p>
 </a>`).join('\n');
-  const details = modules.map(m => `<article id="modulo-${m.id}" data-inema-module="${m.id}" data-inema-track="4" class="bg-dark-800 rounded-xl border border-dark-600 mb-8 overflow-hidden">
+  const details = modules.map(m => `<article id="modulo-${m.id}" data-ARCKHÉ-module="${m.id}" data-ARCKHÉ-track="4" class="bg-dark-800 rounded-xl border border-dark-600 mb-8 overflow-hidden">
   <header class="p-6 border-b border-dark-600">
     <div class="flex items-center justify-between mb-2"><span class="text-amber-400 font-bold">${m.number}</span><span class="text-xs text-neutral-500">${m.duration}</span></div>
     <h3 class="text-2xl font-bold mb-2">${m.icon} ${m.title}</h3><p class="text-neutral-400">${m.description}</p>
-    <div data-inema-meter="modulo:${m.id}" class="inema-meter mt-4"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac>0 de 6</span><span data-inema-meter-pct>0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill></div></div></div>
+    <div data-ARCKHÉ-meter="modulo:${m.id}" class="ARCKHÉ-meter mt-4"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-ARCKHÉ-meter-frac>0 de 6</span><span data-ARCKHÉ-meter-pct>0%</span></div><div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill></div></div></div>
   </header>
   <div class="divide-y divide-dark-600">${m.topics.map((t,i)=>accordion(m,t,i)).join('\n')}</div>
   <div class="p-4 bg-dark-700/30 flex justify-start flex-wrap gap-3">
@@ -169,17 +169,17 @@ ${nav(0)}
   </header>
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12"><div class="bg-dark-800 p-4 rounded-xl border border-dark-600"><strong class="text-2xl text-amber-400">4</strong><p class="text-sm text-neutral-400">Capítulos Expert</p></div><div class="bg-dark-800 p-4 rounded-xl border border-dark-600"><strong class="text-2xl text-amber-400">4</strong><p class="text-sm text-neutral-400">Módulos disponíveis</p></div><div class="bg-dark-800 p-4 rounded-xl border border-dark-600"><strong class="text-2xl text-amber-400">24</strong><p class="text-sm text-neutral-400">Tópicos publicados</p></div><div class="bg-dark-800 p-4 rounded-xl border border-dark-600"><strong class="text-2xl text-amber-400">1</strong><p class="text-sm text-neutral-400">Laboratório</p></div></div>
-    <div class="bg-dark-800 border border-amber-500/30 rounded-xl p-6 mb-12"><div class="flex flex-col md:flex-row md:items-center justify-between gap-5"><div><p class="text-xs text-amber-400 font-semibold">PROGRESSO COMPARTILHADO</p><h2 class="text-2xl font-bold mt-2">Sua jornada continua entre os repositórios</h2><p class="text-neutral-400 mt-2">O mesmo identificador da Formação 1 registra lidos, dúvidas e notas. No GitHub Pages, a origem é compartilhada; JSON mantém o fallback portátil.</p></div><div data-inema-meter="trilha:4" class="inema-meter min-w-64"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac>0 de 24</span><span data-inema-meter-pct>0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill></div></div></div></div></div>
+    <div class="bg-dark-800 border border-amber-500/30 rounded-xl p-6 mb-12"><div class="flex flex-col md:flex-row md:items-center justify-between gap-5"><div><p class="text-xs text-amber-400 font-semibold">PROGRESSO COMPARTILHADO</p><h2 class="text-2xl font-bold mt-2">Sua jornada continua entre os repositórios</h2><p class="text-neutral-400 mt-2">O mesmo identificador da Formação 1 registra lidos, dúvidas e notas. No GitHub Pages, a origem é compartilhada; JSON mantém o fallback portátil.</p></div><div data-ARCKHÉ-meter="trilha:4" class="ARCKHÉ-meter min-w-64"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-ARCKHÉ-meter-frac>0 de 24</span><span data-ARCKHÉ-meter-pct>0%</span></div><div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill></div></div></div></div></div>
     <section id="mapa" class="mb-12"><h2 class="text-2xl font-bold mb-2">Mapa da formação Expert</h2><p class="text-neutral-400 mb-6">O topo navega por capítulos. Dentro de cada capítulo, os módulos seguem a numeração capítulo.módulo.</p><div class="grid lg:grid-cols-2 gap-5">${chapterMap}</div></section>
     <section class="mb-12"><h2 class="text-2xl font-bold mb-6">Capítulo 1 · módulos disponíveis</h2><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">${cards}</div></section>
     <section class="mb-12"><div class="bg-gradient-to-br from-amber-900/30 to-dark-800 border border-amber-500/30 rounded-xl p-6"><p class="text-xs text-amber-400 font-semibold">LABORATÓRIO TRANSVERSAL</p><h2 class="text-2xl font-bold mt-2">Console de risco e evals</h2><p class="text-neutral-300 mt-3 max-w-3xl">Cole um catálogo em JSON e examine contrato, schema, risco, confirmação, fallback e evidências operacionais antes do production readiness review.</p><div class="flex justify-start mt-5"><a href="labs/validador-tools.html" class="px-5 py-3 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-semibold">Executar preflight de produção</a></div></div></section>
     <h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
     ${details}
-    <section class="mt-14 bg-dark-800 border border-amber-500/30 rounded-xl p-8"><p class="text-amber-400 text-xs font-semibold">CONTINUIDADE DO EXPERT</p><h2 class="text-2xl font-bold mt-2">Próximo: threat modeling aplicado</h2><p class="text-neutral-300 mt-3">A formação continua nos capítulos 2, 3 e 4 com red team, SRE de agentes, governança organizacional e projeto final Expert.</p><div class="flex justify-start flex-wrap gap-3 mt-6"><button type="button" data-inema-journey-open class="px-5 py-3 rounded-lg bg-dark-700 hover:bg-dark-600">Salvar / exportar jornada</button><a href="#capitulo-2" class="px-5 py-3 rounded-lg bg-amber-600 hover:bg-amber-500 text-white">Ver módulos do capítulo 2</a></div></section>
+    <section class="mt-14 bg-dark-800 border border-amber-500/30 rounded-xl p-8"><p class="text-amber-400 text-xs font-semibold">CONTINUIDADE DO EXPERT</p><h2 class="text-2xl font-bold mt-2">Próximo: threat modeling aplicado</h2><p class="text-neutral-300 mt-3">A formação continua nos capítulos 2, 3 e 4 com red team, SRE de agentes, governança organizacional e projeto final Expert.</p><div class="flex justify-start flex-wrap gap-3 mt-6"><button type="button" data-ARCKHÉ-journey-open class="px-5 py-3 rounded-lg bg-dark-700 hover:bg-dark-600">Salvar / exportar jornada</button><a href="#capitulo-2" class="px-5 py-3 rounded-lg bg-amber-600 hover:bg-amber-500 text-white">Ver módulos do capítulo 2</a></div></section>
   </section>
 </main>
 ${modals}
-<footer class="border-t border-dark-600 py-8"><div class="max-w-6xl mx-auto px-4 text-sm text-neutral-500">WebMCP Expert · INEMA · Conteúdo técnico baseado no draft oficial; verifique mudanças antes de produção.</div></footer>
+<footer class="border-t border-dark-600 py-8"><div class="max-w-6xl mx-auto px-4 text-sm text-neutral-500">WebMCP Expert · ARCKHÉ · Conteúdo técnico baseado no draft oficial; verifique mudanças antes de produção.</div></footer>
 ${scripts(0)}
 </body></html>`;
 }
@@ -209,19 +209,19 @@ function timeline(topic) {
 function topicSection(module, topic, i) {
   const [title, what, why, concepts, code] = topic;
   const visual = i === 0 ? heroSvg(module.svg, `m${module.id.replace('-','')}`) : i === 1 || i === 4 ? comparison(topic,i) : i === 2 ? timeline(topic) : `<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3">💡 Teste de realidade</h3><p class="text-neutral-300">Implemente este tópico com um caminho feliz, uma entrada inválida e um cancelamento. Registre o que a pessoa viu e o que o agente recebeu.</p></div>`;
-  return `<section id="topico-${i+1}" data-inema-topic="modulo-${module.id}#topico-${i+1}" class="mb-16">
+  return `<section id="topico-${i+1}" data-ARCKHÉ-topic="modulo-${module.id}#topico-${i+1}" class="mb-16">
   <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
     <div class="flex items-center gap-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">${i+1}</span><h2 class="text-2xl font-bold">${title}</h2></div>
-    <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+    <button type="button" data-ARCKHÉ-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
   </div>
-  <div class="inema-prose">
-    <p data-inema-block="m${module.id}-t${i+1}-p1" class="text-neutral-300 mb-6 leading-relaxed"><strong class="text-amber-400">O que é:</strong> ${what}</p>
-    <p data-inema-block="m${module.id}-t${i+1}-p2" class="text-neutral-300 mb-6 leading-relaxed"><strong class="text-amber-400">Por que aprender:</strong> ${why}</p>
+  <div class="ARCKHÉ-prose">
+    <p data-ARCKHÉ-block="m${module.id}-t${i+1}-p1" class="text-neutral-300 mb-6 leading-relaxed"><strong class="text-amber-400">O que é:</strong> ${what}</p>
+    <p data-ARCKHÉ-block="m${module.id}-t${i+1}-p2" class="text-neutral-300 mb-6 leading-relaxed"><strong class="text-amber-400">Por que aprender:</strong> ${why}</p>
   </div>
   ${visual}
   <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
     <h3 class="text-lg font-semibold text-amber-400 mb-3">Conceito aplicado</h3>
-    <p data-inema-block="m${module.id}-t${i+1}-p3" class="text-neutral-300">O contrato deve ser compreensível por quem usa, testável por quem desenvolve e limitado por quem opera. A ferramenta não substitui autorização, validação nem experiência visual.</p>
+    <p data-ARCKHÉ-block="m${module.id}-t${i+1}-p3" class="text-neutral-300">O contrato deve ser compreensível por quem usa, testável por quem desenvolve e limitado por quem opera. A ferramenta não substitui autorização, validação nem experiência visual.</p>
   </div>
   <pre class="code-shell mb-6"><code>${esc(code)}</code></pre>
   <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3">Dica prática</h3><p class="text-neutral-300">Copie o exemplo, rode primeiro com dados locais e só depois conecte o backend. Mantenha logs sem dados pessoais e provoque pelo menos uma falha.</p></div>
@@ -249,12 +249,12 @@ function topicSection(module, topic, i) {
   <details class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
     <summary class="font-semibold cursor-pointer text-sky-400">Indo mais fundo: evidência mínima</summary>
     <div class="mt-4 space-y-3 text-neutral-300 text-sm">
-      <p data-inema-block="m${module.id}-t${i+1}-p4">Guarde a entrada usada, o estado anterior, o resultado devolvido e a alteração visível da página.</p>
-      <p data-inema-block="m${module.id}-t${i+1}-p5">Anote também o comportamento sem suporte, durante cancelamento e diante de uma resposta não autorizada do backend.</p>
+      <p data-ARCKHÉ-block="m${module.id}-t${i+1}-p4">Guarde a entrada usada, o estado anterior, o resultado devolvido e a alteração visível da página.</p>
+      <p data-ARCKHÉ-block="m${module.id}-t${i+1}-p5">Anote também o comportamento sem suporte, durante cancelamento e diante de uma resposta não autorizada do backend.</p>
     </div>
   </details>
   <div><h3 class="font-semibold text-amber-400">Conceitos-chave</h3>${conceptGrid(concepts)}</div>
-  <div class="flex justify-start mt-7"><button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30"><span class="inema-read-icon" aria-hidden="true">○</span><span data-inema-read-label>Marcar como lido</span></button></div>
+  <div class="flex justify-start mt-7"><button type="button" data-ARCKHÉ-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30"><span class="ARCKHÉ-read-icon" aria-hidden="true">○</span><span data-ARCKHÉ-read-label>Marcar como lido</span></button></div>
 </section>`;
 }
 
@@ -266,19 +266,19 @@ function modulePage(module, idx) {
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
 ${nav(1)}
 <nav class="max-w-6xl mx-auto px-4 py-4 text-sm text-neutral-400" aria-label="Breadcrumb"><a href="../../index.html" class="hover:text-amber-400">Início</a><span class="mx-2">/</span><a href="../../index.html#mapa" class="hover:text-amber-400">Expert</a><span class="mx-2">/</span><span class="text-amber-400">Módulo ${module.number}</span></nav>
-<header id="modulo-${module.id}" data-inema-module="${module.id}" data-inema-track="4" class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-y border-dark-600">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO ${module.number}</span><h1 class="text-3xl sm:text-4xl font-bold mb-4">${module.icon} ${module.title}</h1><p class="text-lg text-neutral-400 max-w-3xl">${module.description}</p><div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl"><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-amber-400">6</strong><p class="text-xs text-neutral-400">Tópicos</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-amber-400">${module.duration}</strong><p class="text-xs text-neutral-400">Carga</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-amber-400">Expert</strong><p class="text-xs text-neutral-400">Nível</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-amber-400">${module.type}</strong><p class="text-xs text-neutral-400">Tipo</p></div></div><div data-inema-meter="modulo:${module.id}" class="inema-meter mt-6 max-w-2xl"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac>0 de 6</span><span data-inema-meter-pct>0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill></div></div></div></div>
+<header id="modulo-${module.id}" data-ARCKHÉ-module="${module.id}" data-ARCKHÉ-track="4" class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-y border-dark-600">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO ${module.number}</span><h1 class="text-3xl sm:text-4xl font-bold mb-4">${module.icon} ${module.title}</h1><p class="text-lg text-neutral-400 max-w-3xl">${module.description}</p><div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl"><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-amber-400">6</strong><p class="text-xs text-neutral-400">Tópicos</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-amber-400">${module.duration}</strong><p class="text-xs text-neutral-400">Carga</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-amber-400">Expert</strong><p class="text-xs text-neutral-400">Nível</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-amber-400">${module.type}</strong><p class="text-xs text-neutral-400">Tipo</p></div></div><div data-ARCKHÉ-meter="modulo:${module.id}" class="ARCKHÉ-meter mt-6 max-w-2xl"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-ARCKHÉ-meter-frac>0 de 6</span><span data-ARCKHÉ-meter-pct>0%</span></div><div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill></div></div></div></div>
 </header>
 <main id="conteudo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
   <div class="grid lg:grid-cols-[15rem_minmax(0,1fr)] gap-10">
-    <aside><nav data-inema-toc class="hidden lg:block sticky top-24" aria-label="Índice do módulo"><p class="text-sm text-neutral-400 mb-3" data-inema-section-counter>Seção 1 de 6</p><ol class="space-y-1">${toc}</ol></nav></aside>
+    <aside><nav data-ARCKHÉ-toc class="hidden lg:block sticky top-24" aria-label="Índice do módulo"><p class="text-sm text-neutral-400 mb-3" data-ARCKHÉ-section-counter>Seção 1 de 6</p><ol class="space-y-1">${toc}</ol></nav></aside>
     <article class="min-w-0">${sections}
       <section class="mb-12"><div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8"><h2 class="text-2xl font-bold mb-6">📦 Entrega do módulo</h2><p class="text-neutral-300 mb-6">${module.lab}</p><div class="grid md:grid-cols-2 gap-6 mb-8"><div class="bg-amber-900/20 border border-amber-500/30 rounded-xl p-5"><h3 class="text-amber-400 font-semibold">Critério de aceite</h3><p class="text-neutral-300 text-sm mt-2">A entrega funciona com suporte WebMCP e mantém o caminho manual quando a API não existe.</p></div><div class="bg-sky-900/20 border border-sky-500/30 rounded-xl p-5"><h3 class="text-sky-400 font-semibold">Evidência</h3><p class="text-neutral-300 text-sm mt-2">Inclua código, cenário testado, resultado observado e uma limitação conhecida.</p></div></div><div class="flex justify-start flex-wrap gap-3"><a href="../../index.html" class="px-5 py-3 rounded-lg bg-dark-700 hover:bg-dark-600">← Voltar para a trilha</a>${next?`<a href="modulo-${next.id}.html" class="px-5 py-3 rounded-lg bg-amber-600 hover:bg-amber-500 text-white">Próximo módulo: ${next.number} →</a>`:`<a href="../../labs/validador-tools.html" class="px-5 py-3 rounded-lg bg-amber-600 hover:bg-amber-500 text-white">Validar catálogo final →</a>`}</div></div></section>
       <section class="border border-dark-600 rounded-xl p-6"><h2 class="text-xl font-bold">Fontes técnicas</h2><ul class="mt-4 space-y-2 text-sm"><li><a class="text-sky-400 hover:text-sky-300" href="https://github.com/webmachinelearning/webmcp" target="_blank" rel="noreferrer">Draft e repositório oficial WebMCP</a></li><li><a class="text-sky-400 hover:text-sky-300" href="https://webmachinelearning.github.io/webmcp/" target="_blank" rel="noreferrer">Especificação renderizada</a></li><li class="text-neutral-400">A API declarativa ainda possui pontos em debate; valide o draft antes de produção.</li></ul></section>
     </article>
   </div>
 </main>
-<footer class="border-t border-dark-600 py-8"><div class="max-w-6xl mx-auto px-4 text-sm text-neutral-500">WebMCP Expert · Módulo ${module.number} · INEMA</div></footer>
+<footer class="border-t border-dark-600 py-8"><div class="max-w-6xl mx-auto px-4 text-sm text-neutral-500">WebMCP Expert · Módulo ${module.number} · ARCKHÉ</div></footer>
 ${scripts(1)}
 </body></html>`;
 }

@@ -8,7 +8,7 @@
   "next": "webmcp-6-agent-hub",
   "destination": "webmcp-6-agent-hub",
   "progress": {
-    "namespace": "inema.webmcp-zero-expert.*",
+    "namespace": "ARCKHÉ.webmcp-zero-expert.*",
     "sameOrigin": "automatic-localStorage",
     "fallback": "json-merge",
     "crossOriginFuture": "signed-handoff"

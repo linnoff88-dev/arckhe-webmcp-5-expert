@@ -34,14 +34,14 @@ O conteúdo da próxima fase pode ser consultado antes do portêo. A ordem é re
 
 ## Transporte do estado
 
-O namespace é `inema.webmcp-zero-expert.*`. As páginas usam IDs estáveis como:
+O namespace é `ARCKHÉ.webmcp-zero-expert.*`. As páginas usam IDs estáveis como:
 
 ```text
 modulo-4-1#topico-1
 modulo-4-4#topico-6
 ```
 
-No GitHub Pages, os repositórios da organizaçêo sêo caminhos sob `inematds.github.io`, portanto compartilham a origem e o `localStorage`. Em domínio distinto, use exportaçêo/importaçêo JSON. Um handoff assinado por backend fica reservado para a evoluçêo da plataforma; o estado completo nunca deve ser colocado na URL.
+No GitHub Pages, os repositórios da organizaçêo sêo caminhos sob `linnoff88-dev.github.io`, portanto compartilham a origem e o `localStorage`. Em domínio distinto, use exportaçêo/importaçêo JSON. Um handoff assinado por backend fica reservado para a evoluçêo da plataforma; o estado completo nunca deve ser colocado na URL.
 
 ## Próxima fase
 

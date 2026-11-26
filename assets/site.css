@@ -196,8 +196,8 @@ html:not(.dark) svg[role="img"] { filter: saturate(.82) brightness(.96); }
   .hero-shell::after { background-size: 20px 20px; }
   .phase-chip,
   #theme-toggle,
-  [data-inema-journey-open],
-  [data-inema-appearance-toggle] {
+  [data-ARCKHÉ-journey-open],
+  [data-ARCKHÉ-appearance-toggle] {
     min-width: 2.75rem;
     min-height: 2.75rem;
   }

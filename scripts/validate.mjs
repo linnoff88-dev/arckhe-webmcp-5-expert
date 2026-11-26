@@ -15,13 +15,13 @@ const manifests = [];
 
 for (const file of pages) {
   const html = readFileSync(resolve(root, file), 'utf8');
-  const manifestMatch = html.match(/<script type="application\/json" data-inema-manifest>\s*([\s\S]*?)\s*<\/script>/);
+  const manifestMatch = html.match(/<script type="application\/json" data-ARCKHÉ-manifest>\s*([\s\S]*?)\s*<\/script>/);
   if (!manifestMatch) errors.push(`${file}: manifesto ausente`);
   else manifests.push([file, JSON.stringify(JSON.parse(manifestMatch[1]))]);
-  if (!html.includes('name="inema-course" content="webmcp-zero-expert"')) errors.push(`${file}: courseId incorreto`);
-  if (!html.includes('https://inema.club')) errors.push(`${file}: INEMA.CLUB ausente`);
+  if (!html.includes('name="ARCKHÉ-course" content="webmcp-zero-expert"')) errors.push(`${file}: courseId incorreto`);
+  if (!html.includes('https://ARCKHÉ AI')) errors.push(`${file}: ARCKHÉ AI ausente`);
   if (!html.includes('id="theme-toggle"')) errors.push(`${file}: theme toggle ausente`);
-  if (!html.includes('data-inema-journey-open')) errors.push(`${file}: jornada ausente`);
+  if (!html.includes('data-ARCKHÉ-journey-open')) errors.push(`${file}: jornada ausente`);
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const target = match[1];
     if (/^(?:https?:|#|data:)/.test(target)) continue;
@@ -34,7 +34,7 @@ for (const file of pages) {
 
 for (const file of pages.filter(name => name.includes('modulo-'))) {
   const html = readFileSync(resolve(root, file), 'utf8');
-  const topics = (html.match(/data-inema-topic=/g) || []).length;
+  const topics = (html.match(/data-ARCKHÉ-topic=/g) || []).length;
   const lines = html.split('\n').length;
   if (topics !== 6) errors.push(`${file}: ${topics} tópicos, esperado 6`);
   if (lines < 500 || lines > 800) errors.push(`${file}: ${lines} linhas, esperado 500–800`);

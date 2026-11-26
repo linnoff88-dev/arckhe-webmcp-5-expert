@@ -62,21 +62,21 @@ O curso ensina `document.modelContext`, `registerTool()`, `getTools()`, `execute
 
 ## ProgressêÂ£o da formaêÂ§êÂ£o
 
-Todas as fases usam `<meta name="inema-course" content="webmcp-zero-expert">`. No GitHub Pages da organizaêÂ§êÂ£o, o estado local êÂ© compartilhado pela mesma origem. Para outros domêÂ­nios, o aluno pode exportar e importar a jornada em JSON com merge nêÂ£o destrutivo.
+Todas as fases usam `<meta name="ARCKHÉ-course" content="webmcp-zero-expert">`. No GitHub Pages da organizaêÂ§êÂ£o, o estado local êÂ© compartilhado pela mesma origem. Para outros domêÂ­nios, o aluno pode exportar e importar a jornada em JSON com merge nêÂ£o destrutivo.
 
 Consulte [o contrato de entrega e passagem](docs/entrega-e-progressao.md).
 
 ## LicenêÂ§a
 
-CêÂ³digo sob licenêÂ§a MIT. ConteêÂºdo educacional êÂ© INEMA.
+CêÂ³digo sob licenêÂ§a MIT. ConteêÂºdo educacional êÂ© ARCKHÉ.
 
-<!-- inema-backlink:v1 -->
-## Mais no INEMA.CLUB
+<!-- ARCKHÉ-backlink:v1 -->
+## Mais no ARCKHÉ AI
 
-- [Ficha completa deste curso](https://www.inema.club/cursos/250-formacao-webmcp-5-expert/)
-- [Guia: como aprender inteligêÂªncia artificial](https://www.inema.club/aprender-inteligencia-artificial/)
-- [Todos os cursos](https://www.inema.club/cursos/)
-<!-- /inema-backlink:v1 -->
+- [Ficha completa deste curso](https://www.ARCKHÉ AI/cursos/250-formacao-webmcp-5-expert/)
+- [Guia: como aprender inteligêÂªncia artificial](https://www.ARCKHÉ AI/aprender-inteligencia-artificial/)
+- [Todos os cursos](https://www.ARCKHÉ AI/cursos/)
+<!-- /ARCKHÉ-backlink:v1 -->
 
 ---
 

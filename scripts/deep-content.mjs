@@ -9,7 +9,7 @@ const header = (module, topic, index, accent) => `
     <span class="flex items-center justify-center w-12 h-12 rounded-full bg-${accent}-500/20 text-${accent}-400 font-bold text-xl flex-shrink-0">${index + 1}</span>
     <h2 class="text-2xl font-bold">${topic[0]}</h2>
   </div>
-  <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start">
+  <button type="button" data-ARCKHÉ-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start">
     <span aria-hidden="true">?</span>
     <span>Tenho dúvida</span>
   </button>
@@ -30,9 +30,9 @@ const concepts = (items, accent) => `
 const footer = (items, accent) => `
 ${concepts(items, accent)}
 <div class="flex justify-start mt-7">
-  <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-${accent}-500/20 border border-${accent}-500/30 text-${accent}-400 hover:bg-${accent}-500/30">
-    <span class="inema-read-icon" aria-hidden="true">○</span>
-    <span data-inema-read-label>Marcar como lido</span>
+  <button type="button" data-ARCKHÉ-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-${accent}-500/20 border border-${accent}-500/30 text-${accent}-400 hover:bg-${accent}-500/30">
+    <span class="ARCKHÉ-read-icon" aria-hidden="true">○</span>
+    <span data-ARCKHÉ-read-label>Marcar como lido</span>
   </button>
 </div>`;
 
@@ -204,19 +204,19 @@ export function renderDeepModule(module, accent, palette) {
     const codeBlock = index === 3 ? '' : `
   <pre class="code-shell mb-6"><code>${esc(code)}</code></pre>`;
     return `
-<section id="topico-${index + 1}" data-inema-topic="modulo-${module.id}#topico-${index + 1}" class="mb-16">
+<section id="topico-${index + 1}" data-ARCKHÉ-topic="modulo-${module.id}#topico-${index + 1}" class="mb-16">
   ${header(module, topic, index, accent)}
-  <div class="inema-prose">
-    <p data-inema-block="m${module.id}-t${index + 1}-p1" class="text-neutral-300 mb-5 leading-relaxed"><strong class="text-${accent}-400">O que é:</strong> ${what}</p>
-    <p data-inema-block="m${module.id}-t${index + 1}-p2" class="text-neutral-300 mb-6 leading-relaxed"><strong class="text-${accent}-400">Por que aprender:</strong> ${why}</p>
+  <div class="ARCKHÉ-prose">
+    <p data-ARCKHÉ-block="m${module.id}-t${index + 1}-p1" class="text-neutral-300 mb-5 leading-relaxed"><strong class="text-${accent}-400">O que é:</strong> ${what}</p>
+    <p data-ARCKHÉ-block="m${module.id}-t${index + 1}-p2" class="text-neutral-300 mb-6 leading-relaxed"><strong class="text-${accent}-400">Por que aprender:</strong> ${why}</p>
   </div>
   ${visual(index, module, topic, accent, palette)}
   ${codeBlock}
   <details class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
     <summary class="font-semibold text-sky-400 cursor-pointer">Indo mais fundo: evidência que vale guardar</summary>
     <div class="mt-4 space-y-3 text-sm text-neutral-300">
-      <p data-inema-block="m${module.id}-t${index + 1}-p3">Registre a entrada, o estado anterior, a decisão tomada, o resultado e a alteração visível da página.</p>
-      <p data-inema-block="m${module.id}-t${index + 1}-p4">Inclua também uma falha provocada e o comportamento observado sem suporte WebMCP.</p>
+      <p data-ARCKHÉ-block="m${module.id}-t${index + 1}-p3">Registre a entrada, o estado anterior, a decisão tomada, o resultado e a alteração visível da página.</p>
+      <p data-ARCKHÉ-block="m${module.id}-t${index + 1}-p4">Inclua também uma falha provocada e o comportamento observado sem suporte WebMCP.</p>
     </div>
   </details>
   ${footer(keys, accent)}
